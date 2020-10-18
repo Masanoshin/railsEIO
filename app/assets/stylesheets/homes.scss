@@ -1,0 +1,335 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.footer{
+    background-color: rgb(143, 143, 143);
+    width: 100%;
+    height: 200px;
+}
+.header{
+    background-color: #D0FF73;
+    width: 100%;
+    height: 100px;
+}
+.header-top{
+    text-align: center;
+    // display: inline-block;
+    img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    p{
+        display: inline-block;
+        font-family: "Tiro Hindi";
+    }
+}
+.header-link{
+    // display: inline-block;
+    text-align: center;
+    ul{
+        padding-top: 20px;
+        li{
+            display: inline-block;
+            padding: 0 20px;
+         a{
+             text-decoration: none;
+             color: black;
+          }
+        a:hover{
+            color: wheat;
+          }
+        }
+    }
+}
+.home-1{
+    width: 100%;
+    height: 570px;
+    background-color: rgb(250, 250, 255);
+    img{
+        width: 20px;
+        height: 20px;
+    }
+    h1{
+        font-size: 50px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        margin-top: 120px;
+        font-family: "Tiro Hindi";
+    }
+}
+.home-2{
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+.home-2-text{
+    display: inline-block;
+    width: 60%;
+    padding-top: 20px;
+    padding-left: 40px;
+    h1{
+        width: 100%;
+        font-size: 40px;
+        padding: 50px 0px 80px 70px;
+        position: relative;
+        z-index: 1;
+        font-family: "Tiro Hindi";
+    }
+    h1::before{
+        content: "";
+        position: absolute;
+        background-color: #D0FF77;
+        width: 550px;
+        height: 40px;
+        top: 70px;
+        left: 100px;
+        z-index: -1;
+    }
+    p{
+        font-size: 36px;
+        padding: 20px 40px;
+        opacity: 0.75;
+        padding-left: 200px;
+        span{
+            color: #0024c4;
+            font-weight: 600;
+        }
+    }
+}
+.home-2-img{
+    display: inline-block;
+    position: absolute;
+    top: 130px;
+    right: 170px;
+    img{
+        width: 300px;
+        height: 300px;
+        
+    }
+}
+.home-3{
+    background-image: url("../assets/city.png");
+    
+    background-size: 100% 100%;
+    width: 100%;
+    height: 600px;
+    color: white;
+    text-align: center;
+    h1{
+        padding-top: 110px;
+        margin-bottom: 40px;
+        font-size: 40px;
+        // text-decoration: underline;
+        // text-decoration-color: #D0FF77; 
+        font-weight: 500;  
+        span{
+            color: red;
+            font-size: 45px;
+        }
+    }
+    p{
+        font-size: 30px;
+        padding: 20px 0px;
+        font-weight: 600;
+        span{
+            color: #0024c4;
+            font-size: 35px;
+            text-decoration: underline;
+        text-decoration-color: #0024c4; 
+        }
+    }
+}
+.homw-4{
+    width: 100%;
+    height: 600px;
+}
+.home-4-con{
+    background-image: url("../assets/back.png");
+    background-size: 100% 100%;
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+    text-align: center;
+    h1{
+        font-size: 40px;
+        padding: 100px 0 50px 0px;
+    }
+    p{
+        font-size: 30px;
+        padding: 20px 0px;
+    }
+}
+
+// ----------------about----------------
+.about-title{
+    text-align: center;
+    width: 100%;
+    padding-top: 100px;
+    h1{
+        color: black;
+        font-size: 30px;
+    }
+}
+.about-point,.about-why, .about-gole{
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    img{
+        width: 250px;
+        height: 215px;
+    }
+    h1{
+        font-size: 55px;
+        position: absolute;
+        top: 90px;
+        left: 140px;
+    }
+    p{
+        margin: 0 auto;
+        width: 75%;
+        font-size: 35px;
+        line-height: 1.5;
+    }
+}
+// .about-why{
+
+// }
+// .home-3-img{
+//     img{
+//         width: 100%;
+//         height: 500px;
+//         // // animation-name: test;
+//         // // background-color: grayscale($color: #000000);
+//         // transform: grayscale;
+//     }
+  
+// }
+
+
+
+
+
+/*
+html5doctor.com Reset Stylesheet
+v1.4
+2009-07-27
+Author: Richard Clark - http://richclarkdesign.com
+*/
+
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, menu, nav, section,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	background:transparent;
+}
+body {
+	line-height:1;
+	-webkit-text-size-adjust: 100%;
+}
+
+article, aside, dialog, figure, footer, header,
+hgroup, nav, section {
+	display:block;
+}
+
+ul {
+	list-style:none;
+}
+
+blockquote, q {
+	quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:'';
+	content:none;
+}
+
+a {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+}
+
+ins {
+	background-color:#ff9;
+	color:#000;
+	text-decoration:none;
+}
+
+mark {
+	background-color:#ff9;
+	color:#000;
+	font-style:italic;
+	font-weight:bold;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+	border-bottom:1px dotted #000;
+	cursor:help;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+	vertical-align:middle;
+}
+
+.clearfix:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  min-height: 1px;
+}
+
+* html .clearfix {
+  height: 1px;
+  /*\*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}
+
