@@ -1,0 +1,21 @@
+<div class="login">
+    <h1>ログイン</h1>
+    <div class="login-form">
+        <%= form_for(:session, url: login_path) do |f| %>
+            <% if @error == "1"  %>
+              <p>emailまたはpasswordが間違っています</p>
+            <% end %>
+            <p><%= f.label :email %>
+            <%= f.email_field :email, class: "login-email" %></p>
+
+            <p><%= f.label :password　%>
+            <%= f.password_field :password, class: "login-password" %></p>
+
+            <p><%= f.submit "ログイン", class:"btn login-btn" %></p>
+
+            
+            
+        <% end %>
+            <p class="newuser"><%= link_to "新規登録はこちら", "singup" %></p>
+    </div>
+</div>

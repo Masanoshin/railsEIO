@@ -3,4 +3,11 @@ Rails.application.routes.draw do
   get "home", to: "homes#home"
   get "about", to: "homes#about"
   get "event", to: "events#event"
+  get "singup", to: "users#new"
+  post "singup", to: "users#create"
+  get "login", to: "sessions#login"
+  post "login", to: "sessions#create"
+  get "logout", to: "sessions#destroy"
+  get "mypage", to: "users#mypage"
+  get "post", to: "posts#post"
 end

@@ -5,16 +5,16 @@
     </div>
     <div class="header-link">
         <ul>
-            <%# <li>ホーム</li>
-            <li>イベント一覧</li>
-            <li>このサイトについて</li>
-            <li>ログイン</li>
-            <li>新規登録</li> %>
             <li><%= link_to "ホーム", "home" %></li>
             <li><%= link_to "イベント一覧", "event" %></li>
             <li><%= link_to "このサイトについて", "about" %></li>
-            <li><%= link_to "ログイン", "＃" %></li>
-            <li><%= link_to "新規登録", "＃" %></li>
+            <% if logged_in? %>
+            <li><%= link_to "ログアウト", "logout" %></li>
+            <li><%= link_to "mypage", "mypage" %></li>
+            <% else %>
+                <li><%= link_to "ログイン", "login" %></li>
+                <li><%= link_to "新規登録", "singup" %></li>
+            <% end %>
         </ul>
     </div>
 </div>
