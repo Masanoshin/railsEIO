@@ -1,0 +1,24 @@
+<div class="title">
+  <h1>イベント投稿</h1>
+</div>
+
+<div class="e-post-form">
+    <%= form_with model: @post, url: post_path do |f| %>
+     
+    
+      <div class="post">
+        <p><%= f.label :title %>
+        <%= f.text_field :title %></p>
+
+        <p><%= f.label :content %>
+        <%= f.text_area :content, placeholder: "本文を入力してください" %></p>
+
+        <p><%= f.label :date %>
+        <%= f.date_field :date %></p>
+
+        <p><%= f.submit "投稿", class: "btn btn-primary" %></p>
+      </div>
+    <% end %>
+</div>
+
+

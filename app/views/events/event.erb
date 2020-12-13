@@ -5,6 +5,16 @@
 <div class="event-img">
 <%= image_tag("city.png", alt: "img") %>
 </div>
+ <% @posts.each do |post| %>
+ <div class="post-list">
+  <ul>
+     <li><%= post.title %></li>
+     <li><%= post.content %></li>
+     <li><%= post.date %></li>
+  </ul>
+  
+  </div>
+ <% end %>
 <%else%>
 <p>ログインしてください</p>
 <% end %>

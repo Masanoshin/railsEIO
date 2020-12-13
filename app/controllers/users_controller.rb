@@ -6,7 +6,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params) #このコードは @user = User.new(naem: name, email:email, password: password, password_confirmation:pasword_confirtion)と同じ
+         @user = User.new(user_params) #このコードは @user = User.new(naem: name, email:email, password: password, password_confirmation:pasword_confirtion)と同じ
+         
+        # @user = User.new(name: name, email: email, password: password, password_confirmation: password_confirmation)
         if @user.save
             flash[:success] = "登録が完了しました"
             redirect_to ("/login")
@@ -18,6 +20,10 @@ class UsersController < ApplicationController
     def mypage
         @user = User.find_by(id: session[:user_id])
 
+    end
+
+    def edit
+        @user = User.find_by(id: params[:id])
     end
 
         private

@@ -5,15 +5,19 @@
     </div>
     <div class="header-link">
         <ul>
-            <li><%= link_to "ホーム", "home" %></li>
-            <li><%= link_to "イベント一覧", "event" %></li>
-            <li><%= link_to "このサイトについて", "about" %></li>
+            <li><%= link_to "ホーム", "/home" %></li>
+            <li><%= link_to "イベント一覧", "/event" %></li>
+            <li><%= link_to "このサイトについて", "/about" %></li>
             <% if logged_in? %>
-            <li><%= link_to "ログアウト", "logout" %></li>
-            <li><%= link_to "mypage", "mypage" %></li>
+            <li><%= link_to "mypage", "/mypage" %></li>
+            <li><%= link_to "ログアウト", "/logout" %></li>
+            <% if admin? %>
+                <li><%= link_to "イベント投稿", "/post" %></li>
             <% else %>
-                <li><%= link_to "ログイン", "login" %></li>
-                <li><%= link_to "新規登録", "singup" %></li>
+             <% end %>
+            <% else %>
+                <li><%= link_to "ログイン", "/login" %></li>
+                <li><%= link_to "新規登録", "/singup" %></li>
             <% end %>
         </ul>
     </div>
