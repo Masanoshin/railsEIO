@@ -1,3 +1,5 @@
+<div class="post-all">
+<div class="all">
 <div class="title">
   <h1>イベント投稿</h1>
 </div>
@@ -10,15 +12,19 @@
         <p><%= f.label :title %>
         <%= f.text_field :title %></p>
 
-        <p><%= f.label :content %>
-        <%= f.text_area :content, placeholder: "本文を入力してください" %></p>
-
         <p><%= f.label :date %>
         <%= f.date_field :date %></p>
+        
+        <p><%= f.label :content %>
+        <%= f.text_area  :content, placeholder: "本文を入力してください" %></p> <%# 本文の縦と横の長さの調整 %>
+        
+
+        <p><%= f.label  :img %>
+        <%= f.file_field :img %></p>
 
         <p><%= f.submit "投稿", class: "btn btn-primary" %></p>
       </div>
     <% end %>
 </div>
-
-
+</div>
+</div>

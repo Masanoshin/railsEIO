@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    
+    # before_action :log_in, only:[:edit, :update, :mypage, :destroy] ログインしてなくても観覧できるようになっている
 
     def new
         @user = User.new
@@ -26,8 +26,25 @@ class UsersController < ApplicationController
         @user = User.find_by(id: params[:id])
     end
 
+    def update
+        @user = User.find_by(id: params[:id])
+        user_name = params[:user][:name]
+        user_email = params[:user][:email]
+        if @user.update(user_params)
+            flash[:notice] = "変更しました"
+            redirect_to "/mypage"
+        else
+            flash[:notice] = "エラーです"
+            render "mypage"
+        end
+    end
+
         private
         def user_params
-            params.require(:user).permit(:name, :email, :password,:password_confirmation)
+            params.require(:user).permit(:name, :email, :password,:password_confirmation, :img)
+        end
+
+        def loginuser
+
         end
 end

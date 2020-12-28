@@ -1,1 +1,22 @@
-<h1>OK</h1>
+
+<div class="user-edit">
+<div class="edit-form">
+<h1>プロフィール編集</h1>
+<%= form_with model: @user, url: "/user/#{@user.id}/update" do |f| %>
+    <div class="u-e">
+      <p><%= f.label :name %>
+      <%= f.text_field :name, class: "u-e-n" %> </p>
+      
+      <p><%= f.label :email %>
+      <%= f.text_field :email, class: "u-e-e" %></p>
+
+      <p><%= f.label :img %>
+      <%= f.file_field :img %></p>
+
+     
+      <%= f.submit "プロフィール編集", class: "u-e-s" %>
+    
+     </div>
+  <% end %>
+</div>
+</div>

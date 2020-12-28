@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_024118) do
+ActiveRecord::Schema.define(version: 2020_12_27_034151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coments", force: :cascade do |t|
+    t.text "coment"
+    t.integer "user_id"
+    t.integer "posted_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -22,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_11_05_024118) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "img"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_11_05_024118) do
     t.string "password"
     t.integer "admin"
     t.string "password_digest"
+    t.string "img"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

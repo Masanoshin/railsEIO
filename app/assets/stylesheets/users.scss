@@ -8,56 +8,6 @@ v1.4
 Author: Richard Clark - http://richclarkdesign.com
 */
 
-.singup{
-    background-image: url("../assets/back23.png");
-    background-size: 100% 100%;
-    width: 100%;
-    height: 650px;
-    text-align: center;
-    h1{
-        font-size: 2em;
-        padding-top: 5em;
-        padding-bottom: 1.6em;
-    }
-}
-.singup-form{
-    width: 60%;
-    margin: 0 auto;
-}
-#error_explanation{
-    padding-top: -20px;
-    ul{
-        li{
-            font-size: 1em;
-    
-        }
-    }
-}
-.alert{
-}
-.field_with_errors{
-    display: inline-block;
-}
-.form{
-    width: 50%;
-    margin: 0 auto;
-    p{
-        padding-top: 20px;
-    }
-}
-.new_user{
-    text-align: left;
-}
-#user_name{
-    margin-left: 57px;
-}
-#user_email{
-    margin-left: 61px;
-}
-#user_password{
-    margin-left: 26px;
-}
-
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -171,3 +121,117 @@ input, select {
 }
 
 
+
+
+.singup{
+    background-image: url("../assets/back23.png");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 650px;
+    text-align: center;
+    h1{
+        font-size: 2em;
+        padding-top: 5em;
+        padding-bottom: 1.6em;
+    }
+}
+.singup-form{
+    width: 60%;
+    margin: 0 auto;
+}
+#error_explanation{
+    padding-top: -20px;
+    ul{
+        li{
+            font-size: 1em;
+    
+        }
+    }
+}
+.alert{
+}
+.field_with_errors{
+    display: inline-block;
+}
+.form{
+    width: 50%;
+    margin: 0 auto;
+    p{
+        padding-top: 20px;
+    }
+}
+.new_user{
+    text-align: left;
+}
+#user_name{
+    margin-left: 57px;
+}
+#user_email{
+    margin-left: 61px;
+}
+#user_password{
+    margin-left: 26px;
+}
+
+
+// mypage
+.profile{
+    display: inline-block;
+}
+.p-in{
+    padding: 80px 0px 20px 90px;
+    img{
+        width: 13em;
+        height: 13em;
+        border-radius: 50%;
+        border: solid 2px black;
+    }
+}
+.user-name{
+    padding: 20px 0 0 0px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.my-page{
+    ul{
+        li{
+            a{
+                padding-left: 125px;
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}
+
+// edit
+.user-edit{
+    background-image: url("../assets/back23.png");
+    background-size: 100% 100%;
+    height: 550px;
+    width: 100%;
+}
+.edit-form{
+    font-size: 2em;
+    display: grid;
+    place-items: center;
+    padding: 140px 0 40px 0;
+    h1{
+        padding: 10px 0px;
+    }
+}
+// #user_img{
+//     padding-left: 20px;
+// }
+#user_email{
+    margin-left: 64px; 
+}
+.u-e{
+    p{
+        padding: 20px 0;
+    }
+}
+.u-e-s{
+    margin-top: 20px;
+}

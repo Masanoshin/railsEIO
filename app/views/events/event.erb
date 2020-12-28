@@ -1,20 +1,43 @@
 <%if @user %>
-<h1><%= @user.id %></h1>
-<h1><%= @user.admin %></h1>
-<h1><%= @user.name %></h1>
-<div class="event-img">
-<%= image_tag("city.png", alt: "img") %>
+
+<div class="event">
+<div class="event-one event-co">
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>content</h1>
+<h1>cot</h1>
+
 </div>
+
+
+<div class="event-co">
  <% @posts.each do |post| %>
- <div class="post-list">
+ <div class="posted">
   <ul>
-     <li><%= post.title %></li>
-     <li><%= post.content %></li>
-     <li><%= post.date %></li>
+     <% if post.img? %>
+       <li class="posted-img"><%= image_tag post.img.url %></li>
+     <% else %>
+       <li class="posted-img"><%= image_tag("city.png") %></li>
+    <% end %>
+     <li class="posted-title"><%= post.title %></li>
+     <li class="posted-date">開催日:<%= post.date %></li>
+     <li class="posted-content"><%= post.content %></li>
+     <li class="post-detal"><%=link_to "詳細", "/detal/#{post.id}" %></li>
   </ul>
-  
   </div>
  <% end %>
+
+</div>
+</div>
+
 <%else%>
 <p>ログインしてください</p>
 <% end %>

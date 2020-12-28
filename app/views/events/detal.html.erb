@@ -1,0 +1,22 @@
+<div class="detal-all">
+    <div class="detal">
+        <div class="detal-coment">
+            <%= form_with model: @event, url: coment_path do |f| %>
+             <p><%= f.label :coment %>
+                <%= f.text_field :coment %></p>
+            
+            <p><%= f.hidden_field :postedd_id, :value => @posted_id %></p>
+             <p><%= f.submit "投稿" %></p>
+            <% end %>
+
+        
+        </div>
+    </div>
+    <div class="detal">
+  
+    </div>
+
+
+
+
+</div>

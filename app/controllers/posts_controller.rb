@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    before_action :post_params, only:[:create]
     def show
         @user = User.find_by(id: session[:user_id])
         @post = Post.new
@@ -12,7 +13,8 @@ class PostsController < ApplicationController
         title = params[:post][:title]
         content = params[:post][:content]
         date = params[:post][:date]
-        @post = Post.new(title: title, content: content,user_id: user_id, date: date)
+        img = params[:post][:img]
+        @post = Post.new(title: title, content: content,user_id: user_id, date: date, img: img)
         # @post = Post.new(post_params)
         
         # @post = Post.new(title: :title, content: :conten ,date: :date)
@@ -30,10 +32,8 @@ class PostsController < ApplicationController
 
       private
       def post_params
-        params.require(:post).permit(:title, :content, :user_id, :date)
+        params.require(:post).permit(:title, :content, :user_id, :date, :img)
       end
 
-      def micropost_params
-        params.require(:micropost).permit(:title, :content, :user_id, :date)
-    end
+      
 end
