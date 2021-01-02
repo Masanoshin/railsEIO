@@ -1,0 +1,31 @@
+<div class="poated-edit-all"></div>
+<div class="all">
+<div class="edit-title">
+  <h1>投稿編集</h1>
+</div>
+<div class="e-post-form">
+    <%= form_with model: @post, url:"/posted/#{@posted.id}/update" do |f|  %>
+        <div class="posted-edit">
+            <p><%= f.label :title %>
+               <%= f.text_field :title, value: "#{@posted.title}" %></p>
+
+            <p><%= f.label :date %>
+              <%= f.date_field :date, value: "#{@posted.date}" %></p>
+
+            <p><%= f.label :content %>
+              <%= f.text_area :content, value: "#{@posted.content}" %></p>
+
+              <p><%= f.label :img %>
+                <%= f.file_field :img %></p>
+
+
+            <p><%= f.submit "編集", class: "btn btn-primary" %></p>
+
+        
+        </div>
+
+
+    <% end %>
+
+</div>
+</div>

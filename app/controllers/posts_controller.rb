@@ -30,9 +30,49 @@ class PostsController < ApplicationController
         end
     end
 
+    def destroy
+        posted_id = params[:id]
+        posted = Post.find_by(id: posted_id)
+        posted.destroy
+    
+        redirect_to "/event"
+      end
+  
+      def edit
+        user = User.find_by(id: session[:user_id])
+ 
+        user_admin = user.admin
+        if user_admin == 1
+            posted_id = params[:id]
+            @posted = Post.find_by(id: posted_id)
+            render :edit
+        else    
+            flash[:notice] = "権限がありません"
+            redirect_to "/login"
+        end
+      end
+  
+      def update
+        posted_id = params[:id]
+        @posted = Post.find_by(id: posted_id)
+        title = params[:title]
+        date = params[:date]
+        content = params[:content]
+        img = params[:img]
+        if @posted.update(title: title, date: date, content: content, img: img)
+            flash[:notice] = "編集しました"
+            redirect_to "/event"
+        else
+            flash[:notice] = "エラーです"
+            redirect_to "/event"
+        end
+        
+        
+      end
+
       private
       def post_params
-        params.require(:post).permit(:title, :content, :user_id, :date, :img)
+        params.require(:post).permit(:title, :content, :date, :img)
       end
 
       

@@ -16,7 +16,7 @@
 <h1>cot</h1>
 
 </div>
-
+<%# kaminari 使い方検索 ページねいとの仕方 %>
 
 <div class="event-co">
  <% @posts.each do |post| %>
@@ -30,7 +30,11 @@
      <li class="posted-title"><%= post.title %></li>
      <li class="posted-date">開催日:<%= post.date %></li>
      <li class="posted-content"><%= post.content %></li>
-     <li class="post-detal"><%=link_to "詳細", "/detal/#{post.id}" %></li>
+     <% if @user.admin == 1 %>
+       <li class="posted-destroy"><%= link_to '削除', "/posted/destroy/#{post.id}", method: :delete, data: { confirm: "You sure?" } %></li>
+       <li class="posted-update"><%= link_to "編集", "/posted/edit/#{post.id}" %></li>
+      <% end %>
+     <li class="posted-link"><%= link_to "詳細", "/detal/#{post.id}" %></li>
   </ul>
   </div>
  <% end %>

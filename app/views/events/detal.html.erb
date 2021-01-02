@@ -1,6 +1,6 @@
 <div class="detal-all">
     <div class="detal">
-        <div class="detal-coment">
+        <div class="detal-coment-post">
             <%= form_with model: @event, url: coment_path do |f| %>
              <p><%= f.label :coment %>
                 <%= f.text_field :coment %></p>
@@ -11,10 +11,35 @@
 
         
         </div>
+ 
+   
+    <div class="detal-coment-result">
+      <% @coments.each do |coment| %>
+        <div class="coment">
+        <ul>
+           <li></li>
+           <li class="d-c-come"><%= coment.coment %></li>
+           <li class="d-c-time"><%= coment.created_at.strftime('%m/%d %H:%M') %></li>
+           
+        </ul>
+        </div>
+      <% end %>
+    </div>
     </div>
     <div class="detal">
-  
+      <div class="detal-posted">
+        <% if @posteds.img.url != nil %>
+            <%= image_tag @posteds.img.url %>
+        <% else %>
+            <%= image_tag("will.png") %>
+        <% end %>
+        <p class="detal-title"><%=  @posteds.title %></p>
+        <p class="detal-date">開催日  <%=  @posteds.date %></p>
+        <p class="detal-content"><%=  @posteds.content %></p>
+      </div>
     </div>
+
+
 
 
 

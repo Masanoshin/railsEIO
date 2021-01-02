@@ -23,13 +23,19 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find_by(id: params[:id])
+        user_id = params[:id].to_i
+        id = session[:user_id]
+       
+        if user_id == id
+           @user = User.find_by(id: params[:id])
+        else
+            flash[:notice] = "ログインしてくだい"
+            redirect_to ('/login')
+        end
     end
 
     def update
         @user = User.find_by(id: params[:id])
-        user_name = params[:user][:name]
-        user_email = params[:user][:email]
         if @user.update(user_params)
             flash[:notice] = "変更しました"
             redirect_to "/mypage"

@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.post-all{
+.post-all {
     width: 100%;
-    height: 550px;
+    height: 600px;
     font-size: 2em;
 }
 .all{
@@ -16,6 +16,34 @@
     display: grid;
     place-items: center;
     padding: 140px 0 40px 0;
+}
+.e-post-form{
+    width: 40%;
+    margin: 0 auto;
+    p{
+        padding: 10px 0px;
+        label{
+            width: 50%;
+            display: inline-block;
+        }
+    }
+}
+// 編集ページ
+.posted-edit-all {
+    width: 100%;
+    height: 600px;
+    font-size: 2em;
+}
+.all{
+    background-image: url("../assets/back23.png");
+    background-size: 100% 100%;
+    height: 100%;
+}
+.edit-title{
+    display: grid;
+    place-items: center;
+    padding: 140px 0 40px 0;
+    font-size: 2em;
 }
 .e-post-form{
     width: 40%;

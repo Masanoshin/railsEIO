@@ -1,7 +1,7 @@
 <% if @user %>
 <div class="profile">
    <div class="p-in">
-    <% if @user.img != nil  %>
+    <% if @user.img.url != nil  %>
       <%= image_tag @user.img.url %>
     <% else %>
       <%= image_tag("city.png") %>

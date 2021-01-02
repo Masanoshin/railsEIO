@@ -7,5 +7,7 @@ class CreateComents < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_foreign_key(:coments, :posts)
+    add_foreign_key(:coments, :users)
   end
 end
