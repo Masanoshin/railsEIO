@@ -5,7 +5,7 @@
              <p><%= f.label :coment %>
                 <%= f.text_field :coment %></p>
             
-            <p><%= f.hidden_field :postedd_id, :value => @posted_id %></p>
+            <p><%= f.hidden_field :posted_id, :value => @posted_id %></p>
              <p><%= f.submit "投稿" %></p>
             <% end %>
 
@@ -17,12 +17,18 @@
       <% @coments.each do |coment| %>
         <div class="coment">
         <ul>
-           <li></li>
-           <li class="d-c-come"><%= coment.coment %></li>
+           
+           <% if coment.img.url != nil %>
+            <li class="d-c-img"><%= image_tag coment.img.url %></li> 
+          <% else %>
+            <li class="d-c-img"> <%= image_tag("will.png") %></li> 
+           <% end %>
+           <li class="d-c-name"><%= coment.name %>：</li>
            <li class="d-c-time"><%= coment.created_at.strftime('%m/%d %H:%M') %></li>
            
         </ul>
         </div>
+           <p class="d-c-come"><%= coment.coment %></p>
       <% end %>
     </div>
     </div>

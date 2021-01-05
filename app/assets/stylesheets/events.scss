@@ -207,22 +207,41 @@ input, select {
 }
 .coment{
     ul{
+        display: flex;
+        align-items: center;
         padding-top: 15px;
+        margin-bottom: -5px;
     }
     li{
-        display: inline-block;
+        
     }
 }
 
+.d-c-name{
+    font-size: 0.75em;
+    display: inline-block;
+}
 .d-c-come{
     font-size: 1.2em;
     line-height: 23px;
+    display: block;
+    padding-left: 30px;
+}
+.d-c-img{
+    display: inline-block;
+    margin-right: 6.4px;
+    img{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
 }
 .d-c-time{
+    display: inline-block;
     font-size: 0.75em;
     padding-right: 5px;
     color: red;
-    float: right;
+    
 }
 
 .detal-posted{
