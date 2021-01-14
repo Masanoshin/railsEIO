@@ -1,5 +1,6 @@
 <div class="detal-all">
     <div class="detal">
+    <% if @user %>
         <div class="detal-coment-post">
             <%= form_with model: @event, url: coment_path do |f| %>
              <p><%= f.label :coment %>
@@ -11,27 +12,59 @@
 
         
         </div>
- 
-   
+
     <div class="detal-coment-result">
       <% @coments.each do |coment| %>
+      <% if @user == coment.id %>
+        <div class="mycoment">
+      <% else %>
         <div class="coment">
+      <% end %>
+
         <ul>
            
            <% if coment.img.url != nil %>
+           <% if @user == coment.id %>
+            <li class="d-c-myimg"><%= image_tag coment.img.url %></li> 
+             <% else %>
             <li class="d-c-img"><%= image_tag coment.img.url %></li> 
+
+            <% end %>
           <% else %>
-            <li class="d-c-img"> <%= image_tag("will.png") %></li> 
+            <% if @user == coment.id %>
+              <li class="d-c-myimg"> <%= image_tag("will.png") %></li> 
+            <% else %>
+              <li class="d-c-img"> <%= image_tag("will.png") %></li> 
+            <% end %>
            <% end %>
-           <li class="d-c-name"><%= coment.name %>：</li>
-           <li class="d-c-time"><%= coment.created_at.strftime('%m/%d %H:%M') %></li>
+            <% if @user == coment.id %>
+              <li class="d-c-myname">：<%= coment.name %></li>
+            <% else %>
+              <li class="d-c-name"><%= coment.name %>：</li>
+           <% end %>
+           <% if @user == coment.id %>
+              <li class="d-c-mytime"><%= coment.created_at.strftime('%m/%d %H:%M') %></li>
+           <% else %>
+              <li class="d-c-time"><%= coment.created_at.strftime('%m/%d %H:%M') %></li>
+           <% end %>
            
         </ul>
+        <% if @user == coment.id %>
+            <p class="d-c-mycome"><%= coment.coment %></p>
+        <% else %>
+            <p class="d-c-come"><%= coment.coment %></p>
+        <% end %>
         </div>
-           <p class="d-c-come"><%= coment.coment %></p>
       <% end %>
     </div>
+    <% else %>
+    <div class="detal-not">
+    <p>新規登録するとコメントが観覧できます</p>
     </div>
+    <% end %>
+    </div>
+
+
     <div class="detal">
       <div class="detal-posted">
         <% if @posteds.img.url != nil %>
@@ -40,6 +73,12 @@
             <%= image_tag("will.png") %>
         <% end %>
         <p class="detal-title"><%=  @posteds.title %></p>
+        <p class="detal-num">現在参加人数:<%= @num %>人</p>
+        <% if @join != nil %>
+        <p class="detal-joined">『参加済』</p>
+      <% else %>
+        <p class="detal-join"><%= link_to "参加する", "/join/#{@posted_id}" %></p>
+      <% end %>
         <p class="detal-date">開催日  <%=  @posteds.date %></p>
         <p class="detal-content"><%=  @posteds.content %></p>
       </div>

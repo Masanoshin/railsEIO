@@ -6,12 +6,14 @@ Rails.application.routes.draw do
   get "event", to: "events#event"
   get "detal/:id", to: "events#detal"
   post "coment", to: "events#detal" 
+  get "join/:id", to: "events#join"
 
   get "singup", to: "users#new"
   patch "user/:id/update", to: "users#update"
   post "singup", to: "users#create"
   get "mypage", to: "users#mypage"
   get "user/:id/edit", to: "users#edit"
+  get "notjoin/:id", to: "users#notjoin"
   
   get "login", to: "sessions#login"
   post "login", to: "sessions#create"
@@ -22,5 +24,6 @@ Rails.application.routes.draw do
   get "posted/edit/:id", to: "posts#edit"
   post "posted/:id/update", to: "posts#update"
   delete "posted/destroy/:id", to: "posts#destroy"
+
   
 end

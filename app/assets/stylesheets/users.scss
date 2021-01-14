@@ -131,8 +131,8 @@ input, select {
     text-align: center;
     h1{
         font-size: 2em;
-        padding-top: 5em;
-        padding-bottom: 1.6em;
+        padding-top: 3.6em;
+        padding-bottom: 1em;
     }
 }
 .singup-form{
@@ -175,11 +175,18 @@ input, select {
 
 
 // mypage
+.mypageAll{
+    display: flex;
+}
 .profile{
     display: inline-block;
+    width: 40%;
 }
 .p-in{
-    padding: 80px 0px 20px 90px;
+    position: fixed;
+    text-align: center;
+    width: 29%;
+    padding: 60px 0px 20px 0px;
     img{
         width: 13em;
         height: 13em;
@@ -190,18 +197,94 @@ input, select {
 .user-name{
     padding: 20px 0 0 0px;
     text-align: center;
+    
     font-size: 25px;
     font-weight: bold;
 }
-.my-page{
-    ul{
-        li{
-            a{
-                padding-left: 125px;
-                text-decoration: none;
-                color: black;
-            }
+.user-intro{
+    padding: 20px 0 0 0px;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: bold;
+}
+.p-user-edit{
+    a{
+        color: black;
+        padding: 10px 0px 0px 0px;
+        
+        display: inline-block;
+    }
+}
+
+.joined-all{
+    display: inline-block;
+    width: 40%;
+}
+.joined-img{
+    padding: 5px;
+    img{
+        text-align: center;
+        width: 100%;
+        height: 200px;
+
+    }
+}
+.joined-all{
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+.jo{
+    border-top: solid 2px black;
+    margin-bottom: 20px;
+}
+.joined-title{
+    font-weight: bold;
+    padding: 10px 10px;
+    font-size: 1.4em;
+}
+.joined-date{
+    text-align: right;
+    color: red;
+    font-size: 0.8em;
+}
+.joined-content{
+    padding: 10px;
+    font-size: 1em;
+}
+.joined-link{
+    a{
+    color: black;
+    float: right;
+    text-decoration: none;
+    }
+    :hover{
+        opacity: 0.5;
+        padding-top: 3px;
+    }
+}
+.Notjoin{
+    height: 400px;
+    margin-left: -75px;
+    p{
+        padding: 100px 0px 60px 0px;
+        font-size: 2em;
+    }
+    a{
+        color: blue;
+        font-size: 1.2em;
+        &:hover{
+            color: black;
+            padding-top: 2px;
+            display: inline-block;
         }
+
+    }
+}
+.joined-not{
+    a{
+        color: blue;
+        padding-left: 10px;
     }
 }
 

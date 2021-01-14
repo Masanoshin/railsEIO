@@ -19,7 +19,16 @@ class UsersController < ApplicationController
 
     def mypage
         @user = User.find_by(id: session[:user_id])
+        user_id = session[:user_id]
+        # joinedEvent = Join.where(user_id: session[:user_id]).all
+        @joins = Post.joins(:joins).select("posts.*, joins.user_id, joins.post_id").where(joins: {user_id: user_id})
+        
+    end
 
+    def notjoin
+        post_id = params[:id]
+        Join.find_by(post_id: post_id).delete
+        redirect_to "/mypage"
     end
 
     def edit
@@ -47,7 +56,7 @@ class UsersController < ApplicationController
 
         private
         def user_params
-            params.require(:user).permit(:name, :email, :password,:password_confirmation, :img)
+            params.require(:user).permit(:name, :email, :password,:password_confirmation, :img, :intro)
         end
 
         def loginuser

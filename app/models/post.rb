@@ -4,6 +4,7 @@ class Post < ApplicationRecord
     mount_uploader :img, ImgUploader
     # belongs_to :user
     has_many :coments, dependent: :destroy
+    has_many :joins, dependent: :destroy
     default_scope -> { order(created_at: :desc) }
     # validate :img_size  サイズの確認するGEMファイルが必要説
 

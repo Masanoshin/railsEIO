@@ -1,6 +1,6 @@
 <%if @user %>
 
-<div class="event">
+<%# <div class="event">
 <div class="event-one event-co">
 <h1>content</h1>
 <h1>content</h1>
@@ -15,12 +15,12 @@
 <h1>content</h1>
 <h1>cot</h1>
 
-</div>
+</div> %>
 <%# kaminari 使い方検索 ページねいとの仕方 %>
 
 <div class="event-co">
  <% @posts.each do |post| %>
- <div class="posted">
+ <div class="posted fadein">
   <ul>
      <% if post.img? %>
        <li class="posted-img"><%= image_tag post.img.url %></li>
@@ -34,6 +34,15 @@
        <li class="posted-destroy"><%= link_to '削除', "/posted/destroy/#{post.id}", method: :delete, data: { confirm: "You sure?" } %></li>
        <li class="posted-update"><%= link_to "編集", "/posted/edit/#{post.id}" %></li>
       <% end %>
+
+      
+      <% if @joinId.any? { |w| w == post.id }%>
+        <li class="posted-joined">『参加済』</li>
+      <% else %>
+        <li class="posted-join"><%= link_to "参加する", "/join/#{post.id}" %></li>
+      <% end %>
+
+      
      <li class="posted-link"><%= link_to "詳細", "/detal/#{post.id}" %></li>
   </ul>
   </div>
@@ -43,5 +52,23 @@
 </div>
 
 <%else%>
-<p>ログインしてください</p>
+<div class="event-co">
+ <% @posts.each do |post| %>
+ <div class="posted">
+  <ul>
+     <% if post.img? %>
+       <li class="posted-img"><%= image_tag post.img.url %></li>
+     <% else %>
+       <li class="posted-img"><%= image_tag("will.png") %></li>
+    <% end %>
+     <li class="posted-title"><%= post.title %></li>
+     <li class="posted-date">開催日:<%= post.date %></li>
+     <li class="posted-content"><%= post.content %></li>
+     <li class="posted-link"><%= link_to "詳細", "/detal/#{post.id}" %></li>
+  </ul>
+  </div>
+ <% end %>
+
+</div>
+</div>
 <% end %>

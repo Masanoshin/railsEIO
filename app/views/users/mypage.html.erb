@@ -1,4 +1,6 @@
+<div class="mypageAll">
 <% if @user %>
+
 <div class="profile">
    <div class="p-in">
     <% if @user.img.url != nil  %>
@@ -7,17 +9,41 @@
       <%= image_tag("city.png") %>
     <% end %>
     <p class="user-name"><%= @user.name %></p>
+    <p class="user-intro"><%= @user.intro %></p>
+    <span class="p-user-edit"><%= link_to "プロフィール編集", "/user/#{@user.id}/edit" %></span>
    </div>
 </div>
-    <div class="my-page">
-        <ul>
+    
+<% if @joins[0] != nil %>
+<div class="joined-all">
+ <% @joins.each do |join| %>
+ <div class="jo">
+  <ul>
+     <% if join.img.url != nil %>
+       <li class="joined-img"><%= image_tag join.img.url %></li>
+     <% else %>
+       <li class="joined-img"><%= image_tag("will.png") %></li>
+    <% end %>
+     <li class="joined-title"><%= join.title %></li>
+     <li class="joined-date">開催日:<%= join.date %></li>
+     <li class="joined-content"><%= join.content %></li>
+     <li class="joined-not"><%= link_to "参加取り消し", "/notjoin/#{join.post_id}" %></li>
       
-            <li><%= link_to "プロフィール編集", "/user/#{@user.id}/edit" %></li>
+     <li class="joined-link"><%= link_to "詳細", "/detal/#{join.post_id}" %></li>
 
-        </ul>
-    </div>
-
+  </ul>
+  </div>
+ <% end %>
 <% else %>
-    <h1>私のページ</h1>
+<div class="Notjoin">
+  <p>参加しているイベントはありません。<br>イベント一覧からイベントに参加しましょう</p>
+  <%= link_to "イベント一覧", "/event" %>
+</div>
+<% end %>
+</div>
+<%# </div> %>
+<% else %>
+    <h1>ログインしてください</h1>
 <% end %>
 
+</div>

@@ -2,9 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .footer{
-    background-color: rgb(143, 143, 143);
+    background-color: #2b3038;
     width: 100%;
-    height: 200px;
+    height: 170px;
+    text-align: center;
+    img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 30px 0px;
+    }
+    ul{
+        text-align: center;
+        li{
+            display: inline-block;
+            a{
+                
+                text-decoration: none;
+                color: white;
+                padding: 10px 20px;
+                padding-bottom: 0px;
+            }
+            
+        }
+    }
 }
 .header{
     background-color: #D0FF73;
@@ -47,16 +68,18 @@
 .home-1{
     width: 100%;
     height: 570px;
-    background-color: rgb(250, 250, 255);
-    img{
-        width: 20px;
-        height: 20px;
-    }
+    // background-color: rgb(250, 250, 255);
+    background-image: url("../assets/see.png");
+    background-size: 100% 100%;
+    // img{
+    //     width: 20px;
+    //     height: 20px;
+    // }
     h1{
-        font-size: 50px;
+        font-size: 4em;
         text-align: center;
         color: rgb(0, 0, 0);
-        margin-top: 120px;
+        padding-top: 190px; 
         font-family: "Tiro Hindi";
     }
 }
@@ -64,6 +87,7 @@
     width: 100%;
     height: 600px;
     position: relative;
+    background-color: rgb(255, 251, 247);
 }
 .home-2-text{
     display: inline-block;
@@ -94,8 +118,10 @@
         opacity: 0.75;
         padding-left: 200px;
         span{
-            color: #0024c4;
+            color: #99fd02;
             font-weight: 600;
+            font-size: 1.4em;
+            text-shadow: 2px 2px 4px rgb(155, 153, 153);
         }
     }
 }
@@ -121,24 +147,25 @@
     h1{
         padding-top: 110px;
         margin-bottom: 40px;
-        font-size: 40px;
+        font-size: 2.6em;
         // text-decoration: underline;
         // text-decoration-color: #D0FF77; 
         font-weight: 500;  
         span{
             color: red;
-            font-size: 45px;
+            font-size: 1.4em;
         }
     }
     p{
-        font-size: 30px;
+        font-size: 1.5em;
         padding: 20px 0px;
         font-weight: 600;
         span{
             color: #0024c4;
-            font-size: 35px;
+            font-size: 2em;
             text-decoration: underline;
-        text-decoration-color: #0024c4; 
+            text-decoration-color: #0024c4; 
+
         }
     }
 }
@@ -155,13 +182,82 @@
     text-align: center;
     h1{
         font-size: 40px;
-        padding: 100px 0 50px 0px;
-    }
+        margin: 100px 0 50px 0px;
+    
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+  }
+  
+  h1:before, h1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 45px;
+    height: 5px;
+    background-color: black;
+  }
+  
+  h1:before {
+    left:0;
+  }
+  h1:after {
+    right: 0;
+  }
     p{
         font-size: 30px;
         padding: 20px 0px;
     }
 }
+.animation {
+    width: 100%;
+    height: 20px;
+    z-index: -1;
+  }
+.ani {
+    opacity: 0;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 50%;
+  }
+  
+  .ani img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .home-5-all{
+    background-color: rgb(245, 247, 250);
+    height: 270px;
+  }
+  .home-5{
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      padding: 50px 0 50px 0;
+  }
+
+  .home-5-con{
+      width: 100%;
+      margin: 0 20px;
+
+    h1{
+        font-size: 1.5em;
+        padding: 30px 0;
+        text-align: center;
+        width: 20%;
+        padding: 0.5em;/*文字周りの余白*/
+        color: #494949;/*文字色*/
+        background: #fffaf4;/*背景色*/
+        border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+        margin-bottom: 25px;
+      }
+    span{
+        font-size: 1em;
+    }
+  }
 
 // ----------------about----------------
 .about-title{
