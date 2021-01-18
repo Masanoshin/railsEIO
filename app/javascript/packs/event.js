@@ -1,4 +1,17 @@
 
+let width = window.outerWidth;
+window_load();
+window.onresize = window_load;
+
+function window_load() {
+    let width = window.outerWidth
+    return width;
+}
+let w = window_load();
+console.log(w);
+
+
+
 window.addEventListener('scroll', () => {
 	let fadein = document.querySelectorAll(".fadein");
 	fadein.forEach(el => {

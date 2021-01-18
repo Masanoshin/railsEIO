@@ -1,10 +1,22 @@
 class PostsController < ApplicationController
     before_action :post_params, only:[:create]
     def show
+
+        
         @user = User.find_by(id: session[:user_id])
-        @post = Post.new
- 
-        render 'post'
+        
+        if session[:user_id] == nil
+            flash[:notice] = "権限がありません"
+            redirect_to "/login"
+        else
+            if  @user.admin == nil 
+                flash[:notice] = "権限がありません"
+                redirect_to "/login"
+            else
+                @post = Post.new
+                render 'post'
+            end
+        end
     end
 
     def create
@@ -15,11 +27,7 @@ class PostsController < ApplicationController
         date = params[:post][:date]
         img = params[:post][:img]
         @post = Post.new(title: title, content: content,user_id: user_id, date: date, img: img)
-        # @post = Post.new(post_params)
-        
-        # @post = Post.new(title: :title, content: :conten ,date: :date)
-        # @post = Post.new(post_params)
-        
+    
         if @post.save
             # redirect_to "events"
             redirect_to "/event"
@@ -41,8 +49,7 @@ class PostsController < ApplicationController
       def edit
         user = User.find_by(id: session[:user_id])
  
-        user_admin = user.admin
-        if user_admin == 1
+        if user != nil && user.admin == 1
             posted_id = params[:id]
             @posted = Post.find_by(id: posted_id)
             render :edit

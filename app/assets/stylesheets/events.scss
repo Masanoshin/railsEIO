@@ -5,117 +5,6 @@
     height: 200px;
     width: 200px;
 }
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, dialog, figure, footer, header,
-hgroup, menu, nav, section,
-time, mark, audio, video {
-	margin:0;
-	padding:0;
-	border:0;
-	outline:0;
-	font-size:100%;
-	background:transparent;
-}
-body {
-	line-height:1;
-	-webkit-text-size-adjust: 100%;
-}
-
-article, aside, dialog, figure, footer, header,
-hgroup, nav, section {
-	display:block;
-}
-
-ul {
-	list-style:none;
-}
-
-blockquote, q {
-	quotes:none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content:'';
-	content:none;
-}
-
-a {
-	margin:0;
-	padding:0;
-	border:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
-}
-
-ins {
-	background-color:#ff9;
-	color:#000;
-	text-decoration:none;
-}
-
-mark {
-	background-color:#ff9;
-	color:#000;
-	font-style:italic;
-	font-weight:bold;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-	border-bottom:1px dotted #000;
-	cursor:help;
-}
-
-table {
-	border-collapse:collapse;
-	border-spacing:0;
-}
-
-hr {
-    display:block;
-    height:1px;
-    border:0;
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
-}
-
-input, select {
-	vertical-align:middle;
-}
-
-.clearfix:after {
-  content: ".";  /* 新しい要素を作る */
-  display: block;  /* ブロックレベル要素に */
-  clear: both;
-  height: 0;
-  visibility: hidden;
-}
-
-.clearfix {
-  min-height: 1px;
-}
-
-* html .clearfix {
-  height: 1px;
-  /*\*//*/
-  height: auto;
-  overflow: hidden;
-  /**/
-}
 
 
 // event-eventのCSS
@@ -211,7 +100,46 @@ input, select {
     }
     
 }
+.pagination{
+    text-align: center;
+    margin: 10px 0px;
+    span{
 
+    }
+}
+.current{
+    background-color: rgb(150, 148, 148);
+    box-shadow: 1px 1px 2px black;
+    color: white;
+    padding: 5px 0px 5px 5px;
+    margin-right: 7px;
+}
+.page{
+    a{
+        color: black;
+        background-color: none;
+    }
+}
+.first{
+    a{
+        color: black;
+    }
+}
+.prev{
+    a{
+        color: black;
+    }
+}
+.next{
+    a{
+        color: black;
+    }
+}
+.last{
+    a{
+        color: black;
+    }
+}
 
 // event-detalのCSS
 .detal-all{
@@ -233,8 +161,8 @@ input, select {
 
 .detal-coment-result{
     overflow: scroll;
-    
-    height: 300px;
+    width: 70%;
+    height: 350px;
     margin: 20px 45px 0 0;
     border: 1px solid rgb(235, 235, 235);
 }
@@ -326,6 +254,7 @@ input, select {
     padding: 10px;
     margin-bottom: 15px;
     text-decoration: underline;
+    text-align: center;
     font-weight: 550;
 }
 .detal-num{

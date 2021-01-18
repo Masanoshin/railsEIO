@@ -2,6 +2,10 @@ class EventsController < ApplicationController
     def event 
         @user = User.find_by(id: session[:user_id])
         @posts = Post.all
+        
+        # @posts = Post.page(params[:page]).per(20)
+        @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
+
         Coment.new
         Join.new
         user_id = session[:user_id]
